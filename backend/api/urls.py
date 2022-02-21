@@ -8,6 +8,7 @@ from django.urls import path, include
 urlpatterns = [
     path("club/<str:slug>", views.clubManagersInfo.as_view(), name="api-overview"),
     path("league_table", views.premierLeagueTable.as_view(), name="premier_league"),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
