@@ -30,6 +30,21 @@ def searchTable():
 
             played = element.find("td", {"class": "team"}).findNext('td')
             dictionary_of_data["played"] = played.text
+            won = played.findNext("td")
+            dictionary_of_data["won"] = won.text
+            draw = won.findNext("td")
+            dictionary_of_data["draw"] = draw.text
+            lost = draw.findNext("td")
+            dictionary_of_data["lost"] = lost.text
+            goalsFor = lost.findNext("td")
+            dictionary_of_data["goalsFor"] = goalsFor.text
+            goalsAgainst = goalsFor.findNext("td")
+            dictionary_of_data["goalsAgainst"] = goalsAgainst.text
+
+            next = element.find("span", {"class": "nextMatch"})
+            print(next.findChildren("img")[0].attrs["src"])
+            dictionary_of_data["next"] = next.findChildren("img")[0].attrs["src"]
+
             form_parent = element.find("td", {"class": "form"})
 
             form_list = []

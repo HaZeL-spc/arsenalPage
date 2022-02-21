@@ -18,6 +18,6 @@ class clubManagersInfo(APIView):
 
 class premierLeagueTable(APIView):
     def get(self, request, * args, **kwargs):
-        print(searchTable())
         response = Response(searchTable(), status=status.HTTP_200_OK)
         return response
+
